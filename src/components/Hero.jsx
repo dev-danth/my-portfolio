@@ -1,7 +1,7 @@
 import React from 'react';
 //import Computers from './canvas/Computers';
-import dynamic from 'next/dynamic';
-const Computers = dynamic(() => import('@/components/canvas/Computers'));
+//import dynamic from 'next/dynamic';
+// const Computers = dynamic(() => import('@/components/canvas/Computers'));
 
 const Hero = () => {
     return (
@@ -21,9 +21,6 @@ const Hero = () => {
                     </p>
                 </div>
             </div>
-            <>
-                <Computers />
-            </>
         </section>
     );
 };
