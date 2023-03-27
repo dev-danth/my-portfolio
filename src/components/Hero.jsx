@@ -1,11 +1,11 @@
-import React from 'react';
-//import Computers from './canvas/Computers';
-//import dynamic from 'next/dynamic';
-// const Computers = dynamic(() => import('@/components/canvas/Computers'));
+import React, { lazy } from 'react';
+// import ComputersCanvas from './ComputersCanvas';
+import dynamic from 'next/dynamic';
+const ComputersCanvas = dynamic(() => import('@/components/ComputersCanvas'));
 
 const Hero = () => {
     return (
-        <section className="w-full h-screen relative mx-auto">
+        <div className="w-full h-screen relative mx-auto">
             <div className="flex flex-row items-start gap-5 paddingX absolute top-[120px] max-w-7xl mx-auto">
                 <div className="flex flex-col justify-center items-center mt-5">
                     <div className="w-5 h-5 rounded-full bg-[#915eff]"></div>
@@ -21,7 +21,8 @@ const Hero = () => {
                     </p>
                 </div>
             </div>
-        </section>
+            <ComputersCanvas />
+        </div>
     );
 };
 
