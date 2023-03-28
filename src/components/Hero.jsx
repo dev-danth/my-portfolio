@@ -1,7 +1,7 @@
 import React, { lazy } from 'react';
 // import ComputersCanvas from './ComputersCanvas';
 import dynamic from 'next/dynamic';
-const ComputersCanvas = dynamic(() => import('@/components/ComputersCanvas'));
+const Computers = dynamic(() => import('@/components/canvas/Computers'), { ssr: false });
 
 const Hero = () => {
     return (
@@ -21,7 +21,7 @@ const Hero = () => {
                     </p>
                 </div>
             </div>
-            <ComputersCanvas />
+            <Computers />
         </div>
     );
 };
