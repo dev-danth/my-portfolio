@@ -1,5 +1,8 @@
 import Head from 'next/head';
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from '../components';
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works } from '../components';
+import Tech1 from '../components/Tech1';
+import dynamic from 'next/dynamic';
+const Stars = dynamic(() => import('@/components/canvas/Stars'), { ssr: false });
 export default function Home() {
     return (
         <>
@@ -16,11 +19,16 @@ export default function Home() {
                 </div>
                 <About />
                 <Experience />
-                <Tech />
+                <div className="relative z-0">
+                    <Tech1 />
+                    <Stars />
+                </div>
+
                 <Works />
                 <Feedbacks />
                 <div className="relative z-0">
                     <Contact />
+                    <Stars />
                 </div>
             </div>
         </>

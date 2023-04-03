@@ -8,7 +8,12 @@ const ComputersModel = ({ isMobile }) => {
     return (
         <mesh>
             <Preload all />
-            <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
+            <OrbitControls
+                enableZoom={false}
+                maxPolarAngle={Math.PI / 2}
+                minPolarAngle={Math.PI / 2}
+                enablePan={false}
+            />
             <hemisphereLight intensity={0.15} groundColor="black" />
             <spotLight
                 position={[-20, 50, 10]}

@@ -31,6 +31,10 @@ export const navLinks = [
         title: 'About',
     },
     {
+        id: 'tech',
+        title: 'Tech',
+    },
+    {
         id: 'work',
         title: 'Work',
     },
@@ -61,56 +65,65 @@ const services = [
 
 const technologies = [
     {
-        name: 'HTML 5',
-        icon: html,
+        radius: 3,
+        speed: 0.02,
+        techs: [
+            { name: 'HTML 5', icon: './assets/tech/html.png' },
+            {
+                name: 'CSS 3',
+                icon: './assets/tech/css.png',
+            },
+            {
+                name: 'JavaScript',
+                icon: './assets/tech/javascript.png',
+            },
+        ],
     },
     {
-        name: 'CSS 3',
-        icon: css,
+        radius: 5,
+        speed: 0.04,
+        techs: [
+            { name: 'TypeScript', icon: './assets/tech/typescript.png' },
+            {
+                name: 'React JS',
+                icon: './assets/tech/reactjs.png',
+            },
+            {
+                name: 'Redux Toolkit',
+                icon: './assets/tech/redux.png',
+            },
+            {
+                name: 'TypeScript',
+                icon: './assets/tech/typescript.png',
+            },
+        ],
     },
     {
-        name: 'JavaScript',
-        icon: javascript,
-    },
-    {
-        name: 'TypeScript',
-        icon: typescript,
-    },
-    {
-        name: 'React JS',
-        icon: reactjs,
-    },
-    {
-        name: 'Redux Toolkit',
-        icon: redux,
-    },
-    {
-        name: 'Tailwind CSS',
-        icon: tailwind,
-    },
-    {
-        name: 'Node JS',
-        icon: nodejs,
-    },
-    {
-        name: 'MongoDB',
-        icon: mongodb,
-    },
-    {
-        name: 'Three JS',
-        icon: threejs,
-    },
-    {
-        name: 'git',
-        icon: git,
-    },
-    {
-        name: 'figma',
-        icon: figma,
-    },
-    {
-        name: 'docker',
-        icon: docker,
+        radius: 7,
+        speed: 0.06,
+        techs: [
+            { name: 'Node JS', icon: './assets/tech/nodejs.png' },
+            {
+                name: 'MongoDB',
+                icon: './assets/tech/mongodb.png',
+            },
+            {
+                name: 'Three JS',
+                icon: './assets/tech/threejs.svg',
+            },
+            {
+                name: 'git',
+                icon: './assets/tech/git.png',
+            },
+            {
+                name: 'figma',
+                icon: './assets/tech/figma.png',
+            },
+            {
+                name: 'docker',
+                icon: './assets/tech/docker.png',
+            },
+        ],
     },
 ];
 
