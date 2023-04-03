@@ -47,8 +47,8 @@ const Planet = ({ techSet }) => {
                 <mesh
                     key={index}
                     position={[
-                        +radius * Math.cos((Math.PI * 2 * index) / Number(techs.lenght)),
-                        +radius * Math.sin((Math.PI * 2 * index) / Number(techs.lenght)),
+                        +radius * Math.cos((Math.PI * 2 * index) / 3),
+                        +radius * Math.sin((Math.PI * 2 * index) / 3),
                         0,
                     ]}
                 >
