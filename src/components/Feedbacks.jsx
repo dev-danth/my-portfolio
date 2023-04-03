@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { SectionWrapper } from '../hoc';
@@ -55,4 +55,4 @@ const Feedbacks = () => {
     );
 };
 
-export default SectionWrapper(Feedbacks, '');
+export default SectionWrapper(Feedbacks, ''); */
