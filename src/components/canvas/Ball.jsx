@@ -21,7 +21,7 @@ const BallModel = (props) => {
 const Ball = ({ icon }) => {
     return (
         <Canvas frameloop="demand" gl={{ preserveDrawingBuffer: true }}>
-            <Suspense fallback={<CanvasLoader />}>
+            <Suspense fallback={null}>
                 <OrbitControls enablePan={false} enableZoom={false} makeDefault autoRotate autoRotateSpeed={0.75} />
                 <BallModel imgUrl={icon} />
             </Suspense>

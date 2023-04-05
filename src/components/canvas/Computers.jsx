@@ -67,7 +67,7 @@ const Computers = () => {
             camera={{ position: [20, 3, 5], fov: 25 }}
             gl={{ preserveDrawingBuffer: true }}
         >
-            <Suspense fallback={<CanvasLoader />}>
+            <Suspense fallback={null}>
                 <ComputersModel isMobile={isMobile} />
             </Suspense>
         </Canvas>

@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useMemo } from 'react';
+import React, { Suspense, useRef, useMemo, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import {
     Decal,
@@ -19,7 +19,7 @@ const SunModel = (props) => {
     const decal = useTexture('./2k_sun.jpg');
     return (
         <mesh>
-            <sphereGeometry args={[0.3, 32, 32]} />
+            <sphereGeometry args={[0.5, 32, 32]} />
             <meshStandardMaterial map={decal} />
         </mesh>
     );
@@ -31,30 +31,34 @@ function Ecliptic({ radius = 1 }) {
         [radius],
     );
 
-    return <Line worldUnits points={points} color="turquoise" lineWidth={0.01} />;
+    return <Line worldUnits points={points} color="turquoise" lineWidth={0.008} />;
 }
 const Planet = ({ techSet }) => {
     const planet = useRef();
     const { radius, speed, techs } = techSet;
-    const lenght = techs?.lenght;
-    console.log(lenght);
-    /* useFrame(() => {
+    const [lenght] = useState(techs.length);
+    const [imgUrl] = useState(techs.icon);
+    const [decal] = useTexture('./2k_sun.jpg');
+
+    useFrame(() => {
         planet.current.rotation.z += speed;
-    }); */
+    });
     return (
         <group ref={planet}>
             {techs.map((tech, index, techs) => (
                 <mesh
                     key={index}
                     position={[
-                        +radius * Math.cos((Math.PI * 2 * index) / 3),
-                        +radius * Math.sin((Math.PI * 2 * index) / 3),
+                        +radius * Math.cos((Math.PI * 2 * index) / lenght),
+                        +radius * Math.sin((Math.PI * 2 * index) / lenght),
                         0,
                     ]}
                 >
-                    <sphereGeometry args={[0.3, 32, 32]} />
+                    <sphereGeometry args={[0.4, 32, 32]} />
                     <meshStandardMaterial color="#ffff00" />
-                    <Html distanceFactor={20} className="mt-[-38px] ml-[-20px]"></Html>
+                    <Html distanceFactor={20} className="mt-[-38px] ml-[-20px]">
+                        {tech.name}
+                    </Html>
                 </mesh>
             ))}
             ;
@@ -69,11 +73,13 @@ const Sun = () => {
             <ambientLight intensity={0.25} />
             <directionalLight position={[0, 0, 0.05]} />
             <pointLight position={[0, 0, 0]} />
-            <PerspectiveCamera makeDefault position={[0, 15, 15]} />
-            <Suspense fallback={<CanvasLoader />}>
+            <PerspectiveCamera makeDefault position={[0, -18, 15]} />
+            <Suspense fallback={null}>
                 <OrbitControls enablePan={false} enableZoom={false} />
                 <SunModel />
+                <Planet techSet={technologies[0]} />
                 <Planet techSet={technologies[1]} />
+                <Planet techSet={technologies[2]} />
             </Suspense>
             <Preload all />
         </Canvas>

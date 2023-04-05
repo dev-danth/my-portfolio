@@ -66,11 +66,11 @@ const services = [
 const technologies = [
     {
         radius: 3,
-        speed: 0.02,
+        speed: 0.01,
         techs: [
-            { name: 'HTML 5', icon: './assets/tech/html.png' },
+            { name: 'HTML5', icon: './assets/tech/html.png' },
             {
-                name: 'CSS 3',
+                name: 'CSS3',
                 icon: './assets/tech/css.png',
             },
             {
@@ -80,8 +80,8 @@ const technologies = [
         ],
     },
     {
-        radius: 5,
-        speed: 0.04,
+        radius: 6,
+        speed: 0.01,
         techs: [
             { name: 'TypeScript', icon: './assets/tech/typescript.png' },
             {
@@ -99,8 +99,8 @@ const technologies = [
         ],
     },
     {
-        radius: 7,
-        speed: 0.06,
+        radius: 9,
+        speed: 0.01,
         techs: [
             { name: 'Node JS', icon: './assets/tech/nodejs.png' },
             {

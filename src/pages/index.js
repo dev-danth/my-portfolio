@@ -19,7 +19,7 @@ export default function Home() {
                 </div>
                 <About />
                 <Experience />
-                <div className="relative z-0">
+                {/*  <div className="relative z-0">
                     <Tech1 />
                     <Stars />
                 </div>
@@ -29,7 +29,7 @@ export default function Home() {
                 <div className="relative z-0">
                     <Contact />
                     <Stars />
-                </div>
+                </div> */}
             </div>
         </>
     );
